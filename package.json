@@ -1,0 +1,21 @@
+{
+    "name": "pillo-monorepo",
+    "version": "0.0.1",
+    "private": true,
+    "description": "Pillo - AI assistant for online meetings (Electron Frontend + FastAPI Backend)",
+    "author": "JuanNavarr0", 
+    "license": "UNLICENSED",
+    "workspaces": [
+      "apps/*"
+    ],
+    "scripts": {
+      "//": "Placeholder scripts - to be defined later",
+      "dev": "echo \"Run 'npm run dev -w apps/desktop' or specific app script\"",
+      "build": "echo \"Run build for specific app\"",
+      "lint": "echo \"Linting not configured yet\"",
+      "test": "echo \"Testing not configured yet\""
+    },
+    "devDependencies": {
+      "//": "Root dev dependencies (like linters, husky, etc.) will go here"
+    }
+  }
