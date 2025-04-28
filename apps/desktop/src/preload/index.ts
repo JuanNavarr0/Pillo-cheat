@@ -4,9 +4,9 @@ import { contextBridge, ipcRenderer } from 'electron';
 
 // Custom APIs for renderer
 const api = {
-    sendPing: () => ipcRenderer.send('ping'),
-    // Add other APIs needed by the renderer process here
-    // Example: handle backend communication setup
+  sendPing: () => ipcRenderer.send('ping'),
+  // Add other APIs needed by the renderer process here
+  // Example: handle backend communication setup
 };
 
 // Use `contextBridge` to expose Node.js-based APIs to your renderer process
@@ -19,9 +19,8 @@ if (process.contextIsolated) {
     console.error('Failed to expose preload API:', error);
   }
 } else {
-  // @ts-ignore (define in dts)
+  // @ts-expect-error (define in dts) // <-- CAMBIADO
   window.electronAPI = api; // Less secure, use only if contextIsolation is false
-  // @ts-ignore (define in dts)
   // window.electron = electronAPI;
 }
 

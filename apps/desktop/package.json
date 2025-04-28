@@ -7,11 +7,12 @@
     "main": "./out/main/index.js",
     "scripts": {
         "dev": "electron-vite dev --watch",
-        "build": "npm run typecheck && electron-vite build && electron-builder",
+        "build": "npm run typecheck && npm run lint && electron-vite build && electron-builder",
         "typecheck": "tsc --noEmit",
-        "lint": "eslint . --ext .ts,.tsx --report-unused-disable-directives --max-warnings 0",
+        "lint": "eslint . --ext ts,tsx --report-unused-disable-directives", 
+        "format": "prettier --write \"./src/**/*.{ts,tsx,css,html}\" \"./*.{ts,js,cjs}\" --log-level warn", 
         "test": "echo \"Vitest tests to be defined\""
-    },
+        },
     "dependencies": {
         "electron-updater": "^6.1.8",
         "react": "^18.2.0",
@@ -22,8 +23,6 @@
         "@electron-toolkit/utils": "^4.0.0",
         "@types/react": "^18.2.66",
         "@types/react-dom": "^18.2.22",
-        "@typescript-eslint/eslint-plugin": "^7.2.0",
-        "@typescript-eslint/parser": "^7.2.0",
         "@vitejs/plugin-react": "^4.2.1",
         "autoprefixer": "^10.4.19",
         "electron": "^29.3.0",

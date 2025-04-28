@@ -10,11 +10,14 @@ function createWindow(): void {
     height: 670,
     show: false,
     autoHideMenuBar: true,
-    ...(process.platform === 'linux' ? { icon: join(__dirname, '../../resources/icon.png') } : {}),    webPreferences: {
+    ...(process.platform === 'linux'
+      ? { icon: join(__dirname, '../../resources/icon.png') }
+      : {}),
+    webPreferences: {
       preload: join(__dirname, '../preload/index.js'), // Use compiled preload
       sandbox: false, // Set to true if possible, requires careful contextBridge setup
       contextIsolation: true, // Recommended for security
-    }
+    },
   });
 
   mainWindow.on('ready-to-show', () => {
