@@ -1,0 +1,5 @@
+# apps/backend/requirements.txt
+fastapi==0.111.0
+uvicorn[standard]==0.29.0 # Includes dependencies for better performance
+python-dotenv==1.0.1   # For .env files
+# Añadiremos: socketio, celery, redis, langchain, tesserocr, sentence-transformers, etc. más adelante

@@ -3,19 +3,23 @@
     "version": "0.0.1",
     "private": true,
     "description": "Pillo - AI assistant for online meetings (Electron Frontend + FastAPI Backend)",
-    "author": "JuanNavarr0", 
+    "author": "JuanNavarr0",
     "license": "UNLICENSED",
     "workspaces": [
-      "apps/*"
+        "apps/*"
     ],
     "scripts": {
-      "//": "Placeholder scripts - to be defined later",
-      "dev": "echo \"Run 'npm run dev -w apps/desktop' or specific app script\"",
-      "build": "echo \"Run build for specific app\"",
-      "lint": "echo \"Linting not configured yet\"",
-      "test": "echo \"Testing not configured yet\""
+      "dev": "npm-run-all --parallel dev:desktop dev:backend",
+      "dev:desktop": "npm run dev -w apps/desktop",
+      "dev:backend": "python -m uvicorn main:app --app-dir apps/backend --host 127.0.0.1 --port 8000 --reload --reload-dir apps/backend",
+      "lint": "echo \"Linting scripts to be defined\"",
+      "lint:desktop": "npm run lint -w apps/desktop",
+      "lint:backend": "echo \"Backend linting (flake8/ruff) to be defined\"",
+      "test": "echo \"Testing scripts to be defined\"",
+      "test:desktop": "npm run test -w apps/desktop",
+      "test:backend": "echo \"Backend testing (pytest) to be defined\""
     },
     "devDependencies": {
-      "//": "Root dev dependencies (like linters, husky, etc.) will go here"
+        "npm-run-all": "^4.1.5"
     }
-  }
+}
