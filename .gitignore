@@ -91,3 +91,15 @@ htmlcov/
 coverage/
 .pytest_cache/
 .vitest.*
+
+# Ignorar reportes HTML de cobertura generados en apps/desktop
+apps/desktop/preload/
+apps/desktop/renderer/
+apps/desktop/base.css
+apps/desktop/block-navigation.js
+apps/desktop/favicon.png
+apps/desktop/index.html
+apps/desktop/prettify.css
+apps/desktop/prettify.js
+apps/desktop/sort-arrow-sprite.png
+apps/desktop/sorter.js
