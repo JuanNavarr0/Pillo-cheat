@@ -3,6 +3,7 @@
       "target": "ESNext",
       "module": "ESNext",
       "lib": ["DOM", "DOM.Iterable", "ESNext"],
+      "types": ["vite/client", "vitest/globals", "@testing-library/jest-dom"],
       "jsx": "react-jsx",
       "moduleResolution": "Bundler", 
       "resolveJsonModule": true,
@@ -19,6 +20,6 @@
         "@renderer/*": ["./src/renderer/*"]
       }
     },
-    "include": ["src", "electron.vite.config.ts"],
+    "include": ["src", "electron.vite.config.ts", "../backend/tests"],
     "references": [{ "path": "./tsconfig.node.json" }] 
   }

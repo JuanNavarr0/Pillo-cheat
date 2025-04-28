@@ -23,9 +23,9 @@
         "format:desktop": "npm run format -w apps/desktop",
         "format:backend": "cd apps/backend && source .venv/bin/activate && ruff format .", 
 
-        "test": "echo \"Testing scripts to be defined\"",
+        "test": "npm-run-all test:desktop test:backend",
         "test:desktop": "npm run test -w apps/desktop",
-        "test:backend": "echo \"Backend testing (pytest) to be defined\""
+        "test:backend": "cd apps/backend && source .venv/bin/activate && pytest --cov=." 
         },
     "devDependencies": {
         "@typescript-eslint/eslint-plugin": "^7.18.0",

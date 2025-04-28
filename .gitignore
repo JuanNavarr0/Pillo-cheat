@@ -83,3 +83,11 @@ venv.bak/
 Icon?
 ehthumbs.db
 Thumbs.db
+
+# Testing / Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+coverage/
+.pytest_cache/
+.vitest.*
