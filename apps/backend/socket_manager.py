@@ -11,9 +11,9 @@ logger = logging.getLogger(__name__)
 #    cors_allowed_origins='*' permite conexiones desde cualquier origen (¡AJUSTAR PARA PRODUCCIÓN!)
 sio_server = socketio.AsyncServer(
     async_mode='asgi',
-    cors_allowed_origins=[], # Empezar vacío por seguridad, añadiremos el origen del renderer después
+    cors_allowed_origins=['http://localhost:5173'], # Empezar vacío por seguridad, añadiremos el origen del renderer después
     logger=True, # Usar logger estándar para eventos de socketio
-    engineio_logger=True # Loggear también eventos de Engine.IO (capa inferior)
+    engineio_logger=False # Loggear también eventos de Engine.IO (capa inferior)
 )
 
 # 2. Crea una aplicación ASGI para Socket.IO (que montaremos en FastAPI)
